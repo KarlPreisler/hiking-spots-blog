@@ -14,17 +14,18 @@ DIFFICULTY_CHOICES = (
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
+    title = models.CharField(max_length=200, unique=True, default='Title')
+    slug = models.SlugField(max_length=200, unique=True, default='slug')
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="blog_posts")
     updated_on = models.DateTimeField(auto_now=True)
-    content = models.TextField()
-    featured_image = CloudinaryField('image', default='placeholder')
-    excerpt = models.TextField(blank=True)
+    content = models.TextField(default='Content')
+    featured_image = CloudinaryField('image', default='Add an Image')
+    excerpt = models.TextField(blank=True, default='Excerpt')
     created_on = models.DateTimeField(auto_now_add=True)
     difficulty = models.CharField(
-        'Difficulty', max_length=20, blank=False, choices=DIFFICULTY_CHOICES)
+        'Difficulty', max_length=20, blank=False, choices=DIFFICULTY_CHOICES,
+        default='Difficulty Level')
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
 

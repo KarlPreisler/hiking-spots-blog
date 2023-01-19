@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, AddPostForm
 
 
 class PostList(generic.ListView):
@@ -72,8 +72,38 @@ class PostLike(View):
         post = get_object_or_404(Post, slug=slug)
 
         if post.likes.filter(id=request.user.id).exists():
-            psot.likes.remove(request.user)
+            post.likes.remove(request.user)
         else:
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+class AddPost(View):
+    """
+    Add post view, displays & handles the form to add a post
+    """
+    def get(self, request, *args, **kwargs):
+
+        return render(
+            request,
+            'add_post.html',
+            {
+                "add_post_form": AddPostForm(),
+            }
+        )
+
+    def post(self, request, *args, **kwargs):
+
+        add_post_form = AddPostForm(data=request.POST)
+
+        if add_post_form.is_valid():
+            add_post_form.instance.user = self.request.user
+            name = add_post_form.cleaned_data.get('name')
+            add_post_form.save()
+            messages.success(request,
+                             'You have added %s to your post list!' % name)
+        else:
+            add_post_form = AddPostForm()
+
+        return redirect('')

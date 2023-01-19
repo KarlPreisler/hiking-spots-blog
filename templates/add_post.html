@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h2>Add Post</h2>
+        </div>
+    </div>
+    <!-- Shows add post form if user is logged in -->
+    {% if user.is_authenticated %}
+    <div class="row justify-content-center">
+        <div class="col-md-auto p-3 bg-dark bg-opacity-75 text-start border-end border-bottom border-3 border-light">
+            <form method="post">
+                {{ add_post_form | crispy }}
+                {% csrf_token %}
+                <button class="btn btn-light text-uppercase mb-0 mt-1" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    {% else %}
+    <!-- Prompts user to log in or create an account if they are not logged in -->
+    <div class="row">
+        <div class="col justify-content-center text-center">
+            <p>Please <a href="{% url 'account_login' %}">log in</a> or <a href="{% url 'account_signup' %}">sign up</a>
+                to add a post!</p>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
