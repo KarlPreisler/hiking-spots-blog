@@ -11,11 +11,10 @@ class CommentForm(forms.ModelForm):
 class AddPostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = (
-            'title',
-            'slug',
-            'content',
-            'featured_image',
-            'excerpt',
-            'difficulty',
-            )
+        fields = '__all__'
+
+
+class EditPostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = '__all__'

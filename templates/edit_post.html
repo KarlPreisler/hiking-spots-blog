@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<!-- Sub-header -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h2>Edit A Post</h2>
+        </div>
+    </div>
+    <!-- Shows edit post form if user is logged in -->
+    {% if user.is_authenticated %}
+    <div class="row justify-content-center">
+        <div class="col-md-auto p-3 bg-dark bg-opacity-75 text-start border-end border-bottom border-3 border-light">
+            <h3 class="card-title">{{ post.name }}</h3>
+            <form method="post">
+                {% csrf_token %}
+                {{ edit_post_form | crispy }}
+                <button class="btn btn-light text-uppercase mb-0 mt-1" type="submit">Submit</button>
+                <a class="btn btn-light text-uppercase mb-0 mt-1" href="{% url 'post_details' %}">Back</a>
+            </form>
+        </div>
+    </div>
+    <!-- Prompts user to log in or create an account if not logged in -->
+    {% else %}
+    <div class="row">
+        <div class="col justify-content-center text-center">
+            <p>Please <a href="{% url 'account_login' %}">log in</a> or <a href="{% url 'account_signup'%}">sign
+                    up</a> edit your blog posts!</p>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}

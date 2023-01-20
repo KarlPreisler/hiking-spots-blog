@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.urls import reverse
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
@@ -17,10 +18,11 @@ class Post(models.Model):
     title = models.CharField(max_length=200, unique=True, default='Title')
     slug = models.SlugField(max_length=200, unique=True, default='slug')
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="blog_posts")
+        User, on_delete=models.CASCADE, related_name='blog_posts')
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField(default='Content')
-    featured_image = CloudinaryField('image', default='Add an Image')
+    featured_image = CloudinaryField(
+        'image', default='placeholder')
     excerpt = models.TextField(blank=True, default='Excerpt')
     created_on = models.DateTimeField(auto_now_add=True)
     difficulty = models.CharField(
@@ -37,6 +39,9 @@ class Post(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
+
+    def get_absolute_url(self):
+        return reverse('post_detail', args=(str(self.id)))
 
 
 class Comment(models.Model):

@@ -1,6 +1,10 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.contrib.messages.views import SuccessMessageMixin
+from django.views.generic.edit import UpdateView
+from django.contrib import messages
+from django.urls import reverse_lazy
 from .models import Post
 from .forms import CommentForm, AddPostForm
 
@@ -101,9 +105,20 @@ class AddPost(View):
             add_post_form.instance.user = self.request.user
             name = add_post_form.cleaned_data.get('name')
             add_post_form.save()
-            messages.success(request,
-                             'You have added %s to your post list!' % name)
+            messages.success(request, 'You successfully added a blog post')
         else:
             add_post_form = AddPostForm()
 
-        return redirect('')
+        return render(
+            request,
+            'add_post.html',
+            {
+                "add_post_form": AddPostForm(),
+            }
+        )
+
+
+class EditPost(SuccessMessageMixin, UpdateView):
+    model = Post
+    success_url = reverse_lazy('post_detail.html')
+    success_message = 'Your changes has been saved'
