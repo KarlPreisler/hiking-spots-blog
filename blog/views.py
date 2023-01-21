@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib.messages.views import SuccessMessageMixin
-from django.views.generic import UpdateView
+from django.views.generic import UpdateView, DeleteView
 from django.contrib import messages
 from django.urls import reverse_lazy
 from .models import Post
@@ -123,3 +123,15 @@ class EditPost(UpdateView):
     template_name = 'post_form.html'
     form_class = EditPostForm
     success_url = reverse_lazy('home')
+
+
+class DeletePost(DeleteView):
+    model = Post
+    success_url = reverse_lazy('home')
+    template_name = 'delete_post.html'
+
+    def delete(self, request, *args, **kwargs):
+        obj = self.get_object()
+        data_to_return = super(
+            DeletePost, self).delete(request, *args, **kwargs)
+        return data_to_return
