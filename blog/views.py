@@ -2,11 +2,11 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib.messages.views import SuccessMessageMixin
-from django.views.generic.edit import UpdateView
+from django.views.generic import UpdateView
 from django.contrib import messages
 from django.urls import reverse_lazy
 from .models import Post
-from .forms import CommentForm, AddPostForm
+from .forms import CommentForm, AddPostForm, EditPostForm
 
 
 class PostList(generic.ListView):
@@ -118,7 +118,8 @@ class AddPost(View):
         )
 
 
-class EditPost(SuccessMessageMixin, UpdateView):
+class EditPost(UpdateView):
     model = Post
-    success_url = reverse_lazy('post_detail.html')
-    success_message = 'Your changes has been saved'
+    template_name = 'post_form.html'
+    form_class = EditPostForm
+    success_url = reverse_lazy('home')
