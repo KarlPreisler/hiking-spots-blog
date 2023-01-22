@@ -7,7 +7,7 @@
 
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
-            {% if user.is_authenticated %}
+            {% if user.is_superuser %}
             <div class="col">
                 <a href="{% url 'add_post' %}" class="btn btn-dark btn-lg text-uppercase">Add Post</a>
             </div>
