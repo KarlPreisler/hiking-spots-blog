@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib.messages.views import SuccessMessageMixin
-from django.views.generic import UpdateView, DeleteView
+from django.views.generic import UpdateView, DeleteView, CreateView
 from django.contrib import messages
 from django.urls import reverse_lazy
 from .models import Post
@@ -135,3 +135,10 @@ class DeletePost(DeleteView):
         data_to_return = super(
             DeletePost, self).delete(request, *args, **kwargs)
         return data_to_return
+
+
+class About(CreateView):
+    template_name = 'about.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, {})

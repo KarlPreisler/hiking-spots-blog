@@ -35,25 +35,26 @@
                   </span>
                 </button>
             </div>
-                <img src="{% static '/images/logo.png' %}" class="logo">
+                <span>
+                    <a href="{% url 'home' %}">
+                        <img src="{% static '/images/logo.png' %}" class="navbar-brand-image d-inline-block align-top logo">
+                    </a>
+                </span>
                     <!-- First nav bar -->
             <div class="navbar-collapse collapse" id="navbar-collapse-first">
-                <ul class="nav-menu-list">
+                <ul class="navbar-nav me-auto mb-2 mt-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
-                    {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="nav-link" href="{% url 'about' %}">About Us</a>
                     </li>
-                    {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                     </li>
-                    {% endif %}
                 </ul>
             </div>
             <!-- Second nav bar -->
@@ -64,7 +65,7 @@
                 </button>
             </div>
             <div class="navbar-collapse collapse" id="navbar-collapse-second">
-                <ul class="navbar-nav me-auto mb-2 mt-lg-0">
+                <ul class="nav-menu-list">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
