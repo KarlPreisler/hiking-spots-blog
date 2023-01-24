@@ -142,8 +142,6 @@ body {
     height: auto;
     width: 100%;
     max-width: 16rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -156,7 +154,7 @@ body {
     text-align: left;
 }
 
-#navbar-collapse-second{
+#navbar-collapse-second .navbar-nav {
     text-align: right;
 }
 
@@ -174,7 +172,7 @@ body {
 }
 
 .footer {
-    background-color: #73ac72;
+    background-color: rgb(146,195,119);
     font-size: 1.25rem;
 }
 
