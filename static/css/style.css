@@ -189,3 +189,12 @@ width: 90%;
 .center-text{
     text-align: center;
 }
+
+.card-text{
+    font-size: large;
+}
+
+.marginbottom {
+    margin-bottom: 10%;
+}
+
