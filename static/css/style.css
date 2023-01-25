@@ -140,7 +140,7 @@ body {
 
 .logo {
     height: auto;
-    width: 100%;
+    width: min(50vw, 300px);
     max-width: 16rem;
     margin-left: auto;
     margin-right: auto;
@@ -178,4 +178,14 @@ body {
 
 .container-fluid {
 width: 90%;
+}
+
+.card-title {
+    text-align: center;
+    margin-top: 5vh;
+    margin-bottom: 8vh;
+}
+
+.center-text{
+    text-align: center;
 }

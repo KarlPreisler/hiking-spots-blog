@@ -11,4 +11,5 @@ urlpatterns = [
     path('delete/<int:pk>', views.DeletePost.as_view(),
          name='delete_post'),
     path('about', views.About.as_view(), name='about'),
+    path('difficulty', views.Difficulty.as_view(), name='difficulty'),
 ]

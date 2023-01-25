@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container fluid">
+    <div class="row g-o">
+        <div class="col-auto card-body">
+            <h2 class="card-title">Difficulty Scale</h2>
+
+            <p class="card-text">
+                This website uses the Shenandoah's Hiking Difficulty Scale to determine the difficulty of hiking trails,
+                It is determined by a numerical rating using the following formula:
+                Elevation Gain x 2 x distance (in miles). The product's square root is the numerical rating.</p>
+            <p class="card-text">
+                For example, a 10-mile hike that gains 2,200 feet in elevation:
+                2,200 x 2=4,400
+                4,400 x 10 = 44,000
+                Square root of 44,000=209.8</p>
+            <p class="card-text">
+                The hike's numerical rating is then tied to one of five descriptors:
+                Easiest, Moderate, Moderately Strenuous, Strenuous, Very Strenuous.</p>
+            <p class="card-text">
+                The example hike above would be rated Very Strenuous.</p>
+            <p class="card-text">
+                This formula approximates difficulty and is imperfect. Dark Hollow Falls has a numeric rating of 36.3. 
+                Under the formula this would be in the "Easiest" range, however the steepness of the trail over such a short distance warrants a "Moderate." 
+                When choosing a hike, always consider the specific elevation and distance in addition the the given difficulty rating.</p>
+            <h5 class="card-text">
+                Easiest - Numerical Rating: less than 50</h5> 
+                A hike that is generally suitable for anyone who enjoys walking. 
+                Mostly level or with a slight incline. 
+            <p>Generally less than 3 miles.</p>
+            <h5 class="card-text">
+                Moderate - Numerical Rating: 50-100</h5>
+                A moderate hike is generally suitable for novice hikers who want a bit of a challenge. 
+                The terrain will involve a moderate incline and may have some steeper sections. 
+            <p>Generally 3 to 5 miles.</p>
+            <h5 class="card-text">
+                Moderately Strenuous - Numerical Rating: 100-150</h5>
+                Moderately Strenuous hikes will generally be challenging for an unconditioned person. 
+                The terrain will involve a steady and often steep incline. 
+            <p>Generally 5 to 8 miles.</p>
+            <h5 class="card-text">
+                Strenuous - Numerical Rating: 150-200</h5>
+                Strenuous hikes will challenge most hikers. 
+                The hike will generally be longer and steeper, but may be deemed "Strenuous" because of the elevation gain. 
+            <p>Generally 7 to 10 miles.</p>
+            <h5 class="card-text">
+                Very Strenuous - Numerical Rating: greater than 200</h5>
+                Only well-conditioned and well-prepared hikers should attempt very strenuous hikes.
+                The hike will generally be long and steep, and may include rock scrambling, stream crossings, and other challenging terrain. 
+            <p>Generally 8 miles and over.</p>
+            <h5 class="card-text">Average Pace is:</h5>
+            <p>1.5 miles per hour for easiest trails.</p>
+            <p>1.4 mph for moderate trails.</p>
+            <p>1.3 mph for moderately strenuous trails.</p>
+            <p>1.2 mph for strenuous and very strenuous trails.</p>
+
+            <p>This is hiking time and does not take into consideration fitness, exploration, rest, contemplation, etc.</p>
+                <div class="card-title">
+            <p class="card-text">Create your account here!</p>
+            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+        </div>
+    </div>
+</div>
+        {% endblock content %}
