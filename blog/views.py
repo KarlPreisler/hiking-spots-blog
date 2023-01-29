@@ -40,8 +40,7 @@ class PostDetail(View):
 
     def post(self, request, slug, *args, **kwargs):
 
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
+        post = get_object_or_404(Post, slug=slug, status=1)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
@@ -54,20 +53,9 @@ class PostDetail(View):
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
-        else:
-            comment_form = CommentForm()
+            messages.success(request, 'Your comment is awaiting approval!')
 
-        return render(
-            request,
-            "post_detail.html",
-            {
-                "post": post,
-                "comments": comments,
-                "commented": True,
-                "comment_form": comment_form,
-                "liked": liked
-            },
-        )
+        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
 class PostLike(View):
@@ -149,3 +137,31 @@ class Difficulty(CreateView):
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, {})
+
+
+def handler403(request, exception):
+    """
+    Custom 403 page
+    """
+    return render(request, "errors/403.html", status=403)
+
+
+def handler500(request):
+    """
+    Custom 500 page
+    """
+    return render(request, "errors/500.html", status=500)
+
+
+def handler404(request, exception):
+    """
+    Custom 404 page
+    """
+    return render(request, "errors/404.html", status=404)
+
+
+def handler405(request, exception):
+    """
+    Custom 405 page
+    """
+    return render(request, "errors/405.html", status=405)
