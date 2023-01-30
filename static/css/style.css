@@ -198,3 +198,12 @@ width: 90%;
     margin-bottom: 10%;
 }
 
+.margin-top {
+    margin-top: 10%;
+}
+
+@media only screen and (max-width: 800px) {
+    #about-img {
+      display: none;
+    }
+  }

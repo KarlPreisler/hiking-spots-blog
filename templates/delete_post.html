@@ -2,15 +2,15 @@
 
 {% block content %}
 
-<!-- Sub-header -->
+<!-- Sub header -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
             <h2>Delete A Post</h2>
         </div>
     </div>
-    <!-- Shows delete post form if user is logged in -->
-    {% if user.is_authenticated %}
+    <!-- Shows delete post form if user is author of the post -->
+    {% if post.author == request.user %}
     <div class="row justify-content-center">
         <div class="col-md-auto p-3 text-center">
             <form method="post">
