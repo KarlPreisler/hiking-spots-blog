@@ -2,10 +2,8 @@
 
 <!DOCTYPE html>
 <html class="h-100">
-
 <head>
     <title>Hiking Spots in Sweden</title>
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
@@ -19,12 +17,9 @@
     <script src="https://kit.fontawesome.com/ac339da8f6.js" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
 </head>
-
 <body class="d-flex flex-column h-100 main-bg">
-
-            <!-- Navigation -->
+    <!-- Navigation -->
     <nav class="navbar sticky-top navbar-light">
         <div class="container-fluid">
             <!-- left button -->
@@ -48,7 +43,7 @@
                     <i class="fa-regular fa-user"></i>
                 </button>
             </div>
-                    <!-- First nav bar -->
+            <!-- First nav bar -->
             <div class="navbar-collapse collapse" id="navbar-collapse-first">
                 <div class="nav-menu">
                 <ul class="nav-menu-list navbar-nav">
@@ -64,27 +59,26 @@
                 </ul>
             </div>
         </div>
-            <!-- Second nav bar -->
-            <div class="navbar-collapse collapse" id="navbar-collapse-second">
-                    <ul class="navbar-nav me-auto mb-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-                        </li>
-                        {% if user.is_authenticated %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                        </li>
-                        {% else %}
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                        </li>
-                        {% endif %}
-                    </ul>
-                </div>
-            </div>
+        <!-- Second nav bar -->
+        <div class="navbar-collapse collapse" id="navbar-collapse-second">
+            <ul class="navbar-nav me-auto mb-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
     </nav>
 
     <div class="container">
@@ -92,28 +86,23 @@
             <div class="col-md-8 offset-md-2">
                 {% for message in messages %}
                 <div class="alert {{ message.tags }} alert-dismissable fade show" id="msg"
-                role="alert">
-                {{ message | safe }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
-
-                </button>
+                    role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                    </button>
                 </div>
-
-                {% endfor %}
+            {% endfor %}
             </div>
         </div>
     </div>
-
     <main class="flex-shrink-0 main-bg">
         {% block content %}
-        <!-- Content Goes here -->
         {% endblock content %}
     </main>
-
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center">Made by Code Instituters</p>
-        <p class="m-0 text-center">Follow us: <i class="fab fa-facebook-square ms-3"></i>
+        <p class="m-0 text-center">Made by Karl Preisler</p>
+        <p class="m-0 text-center">Follow here: <i class="fab fa-facebook-square ms-3"></i>
             <i class="fab fa-twitter-square ms-3"></i>
             <i class="fab fa-instagram-square ms-3"></i>
             <i class="fab fa-youtube-square ms-3"></i></p>

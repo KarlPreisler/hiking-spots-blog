@@ -140,7 +140,7 @@ body {
 
 .logo {
     height: auto;
-    width: min(50vw, 300px);
+    width: min(40vw, 250px);
     max-width: 16rem;
     margin-left: auto;
     margin-right: auto;
@@ -201,9 +201,3 @@ width: 90%;
 .margin-top {
     margin-top: 10%;
 }
-
-@media only screen and (max-width: 800px) {
-    #about-img {
-      display: none;
-    }
-  }
