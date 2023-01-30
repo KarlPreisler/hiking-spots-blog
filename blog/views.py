@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import UpdateView, DeleteView, CreateView
 from django.contrib import messages
 from django.urls import reverse_lazy
@@ -39,14 +40,15 @@ class PostDetail(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
+        if request.user.is_authenticated:
+            post = get_object_or_404(Post, slug=slug, status=1)
+            comments = post.comments.filter(
+                approved=True).order_by("-created_on")
+            liked = False
+            if post.likes.filter(id=self.request.user.id).exists():
+                liked = True
+            comment_form = CommentForm(data=request.POST)
 
-        post = get_object_or_404(Post, slug=slug, status=1)
-        comments = post.comments.filter(approved=True).order_by("-created_on")
-        liked = False
-        if post.likes.filter(id=self.request.user.id).exists():
-            liked = True
-
-        comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
@@ -58,7 +60,7 @@ class PostDetail(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-class PostLike(View):
+class PostLike(LoginRequiredMixin, View):
 
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
