@@ -1,5 +1,6 @@
 from . import views
 from django.urls import path
+from .views import handler404, handler500, handler403, handler405
 
 urlpatterns = [
     path('', views.PostList.as_view(), name='home'),
@@ -13,3 +14,8 @@ urlpatterns = [
     path('about', views.About.as_view(), name='about'),
     path('difficulty', views.Difficulty.as_view(), name='difficulty'),
 ]
+
+handler403 = 'blog.views.handler403'
+handler404 = 'blog.views.handler404'
+handler500 = 'blog.views.handler500'
+handler405 = 'blog.views.handler405'
