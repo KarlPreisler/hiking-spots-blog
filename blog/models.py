@@ -28,6 +28,8 @@ class Post(models.Model):
     difficulty = models.CharField(
         'Difficulty', max_length=20, blank=False, choices=DIFFICULTY_CHOICES,
         default='Difficulty Level')
+    latitude = models.FloatField('Latitude', blank=True, null=True)
+    longitude = models.FloatField('Longitude', blank=True, null=True)
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
 

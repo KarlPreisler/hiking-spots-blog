@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'DEV' in os.environ
-DEBUG = False
+DEBUG = True
 
 LOGGING = {
     'version': 1,
@@ -51,6 +51,10 @@ LOGGING = {
         },
     },
 }
+
+GOOGLE_API_KEY = os.environ.get("API_KEY")
+GOOGLE_STATIC_MAPS_BASE_LINK = 'https://maps.googleapis.com/maps/api/staticmap?key={GOOGLE_API_KEY}&size=200x200&zoom=18'
+
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -168,8 +172,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-GOOGLE_API_KEY = os.environ.get('API_KEY')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/

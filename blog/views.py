@@ -12,6 +12,10 @@ from .models import Post
 from .forms import CommentForm, AddPostForm, EditPostForm
 
 
+GOOGLE_STATIC_MAPS_BASE_LINK = 'https://maps.googleapis.com/maps/api/staticmap?key={GOOGLE_API_KEY}'
+GOOGLE_STATIC_MAPS_BASE_LINK_SMALL = f'{GOOGLE_STATIC_MAPS_BASE_LINK}&size=200x200&zoom=18'
+
+
 class SuperUserRequiredMixin(object):
     """
     View mixin which requires that the authenticated user is a super user
@@ -43,6 +47,10 @@ class PostDetail(View):
         post = get_object_or_404(Post, slug=slug, status=1)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = False
+        map_marker_coordinates = f'{Post.latitude},{Post.longitude}'
+
+        map_img_src = f'{GOOGLE_STATIC_MAPS_BASE_LINK}&center={map_marker_coordinates}&markers=color:green%7C{map_marker_coordinates}'
+
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
 
@@ -53,6 +61,7 @@ class PostDetail(View):
                 "post": post,
                 "comments": comments,
                 "commented": False,
+                "map_img_src": map_img_src,
                 "liked": liked,
                 "comment_form": CommentForm()
             },
