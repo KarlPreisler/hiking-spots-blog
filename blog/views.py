@@ -3,11 +3,31 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
 from django.views.generic import UpdateView, DeleteView, CreateView
 from django.contrib import messages
 from django.urls import reverse_lazy
 from .models import Post
 from .forms import CommentForm, AddPostForm, EditPostForm
+
+
+class SuperUserRequiredMixin(object):
+    """
+    View mixin which requires that the authenticated user is a super user
+    (i.e. `is_superuser` is True).
+    """
+
+    @method_decorator(login_required)
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_superuser:
+            messages.error(
+                request,
+                'You do not have the permission required to perform the '
+                'requested operation.')
+            return redirect(settings.LOGIN_URL)
+        return super(SuperUserRequiredMixin, self).dispatch(
+            request, *args, **kwargs)
 
 
 class PostList(generic.ListView):
@@ -20,8 +40,7 @@ class PostList(generic.ListView):
 class PostDetail(View):
 
     def get(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
+        post = get_object_or_404(Post, slug=slug, status=1)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
@@ -73,12 +92,11 @@ class PostLike(LoginRequiredMixin, View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-class AddPost(View):
+class AddPost(SuperUserRequiredMixin, View):
     """
     Add post view, displays & handles the form to add a post
     """
     def get(self, request, *args, **kwargs):
-
         return render(
             request,
             'add_post.html',
@@ -108,14 +126,14 @@ class AddPost(View):
         )
 
 
-class EditPost(UpdateView):
+class EditPost(SuperUserRequiredMixin, UpdateView):
     model = Post
     template_name = 'post_form.html'
     form_class = EditPostForm
     success_url = reverse_lazy('home')
 
 
-class DeletePost(DeleteView):
+class DeletePost(SuperUserRequiredMixin, DeleteView):
     model = Post
     success_url = reverse_lazy('home')
     template_name = 'delete_post.html'
