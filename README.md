@@ -10,8 +10,8 @@ The website is fully responsive, providing users with the possibility of accessi
 ## Index - Table of Contents
 
 * [User Experience](#user-experience-(UX))
-* [Entity Relationship Diagram]
-* [Wireframes] (#entity-relationship-diagram)
+* [Entity Relationship Diagram](#entity-relationship-diagram)
+* [Wireframes] (#wireframes)
 * [Features](#Features)
 * [Testing](#Testing)
 * [Deployment](#Deployment)
