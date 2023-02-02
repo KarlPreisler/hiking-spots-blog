@@ -201,11 +201,3 @@ width: 90%;
 .margin-top {
     margin-top: 10%;
 }
-
-
-
-@media only screen and (max-width: 780px) {
-    #map {
-      display: none;
-    }
-  }
