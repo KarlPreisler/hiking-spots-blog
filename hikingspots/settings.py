@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'DEV' in os.environ
-DEBUG = True
+DEBUG = False
 
 LOGGING = {
     'version': 1,
@@ -53,7 +53,7 @@ LOGGING = {
 }
 
 GOOGLE_API_KEY = os.environ.get("API_KEY")
-GOOGLE_STATIC_MAPS_BASE_LINK = 'https://maps.googleapis.com/maps/api/staticmap?key={GOOGLE_API_KEY}&size=200x200&zoom=18'
+GOOGLE_STATIC_MAPS_BASE_LINK = 'https://maps.googleapis.com/maps/api/staticmap?&key=AIzaSyA6pWdtMai6-A-8Egk4lHAOV22Ee1VRr8U'
 
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
