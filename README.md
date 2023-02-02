@@ -1,108 +1,386 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Welcome to Hiker's Guide!
 
-Welcome KarlPreisler,
+The purpose of this website is to help hikers find the best hiking trails that Sweden has to offer, the website is targeted towards people who enjoy hiking and want to read more about the different hiking trails in Sweden. 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Information such as difficulty or distance of a trail is easily navigated to and available to the user. Users can also create an account with the website and sign in, this will allow them to interact with the website by liking or posting a comment on an individual blog post.
+The admin users of the site can add new hiking trails, delete current ones, or edit/update hiking trails that you are the author of.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+The website is fully responsive, providing users with the possibility of accessing the website on desktop, tablet or phone.
+- AMI RESPONSIVE IMAGE - 
+## Index - Table of Contents
 
-## Gitpod Reminders
+* [User Experience](#user-experience-(UX))
+* [Entity Relationship Diagram]
+* [Wireframes] (#entity-relationship-diagram)
+* [Features](#Features)
+* [Testing](#Testing)
+* [Deployment](#Deployment)
+* [Credits](#Credit)
+Link to deployed project:
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## User Experience (UX)
 
-`python3 -m http.server`
+**Epic: User Interactivity**
 
-A blue button should appear to click: _Make Public_,
+**User Stories**: 
+- Site User - View post list
+As a **Site user** I can **view a list of posts** so that **I can select one to read**.
 
-Another blue button should appear to click: _Open Browser_.
+- Site User - Liking Posts
+As a **Site User** I can **like a post** so that **I can provide positive feedback to the author**.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+- Site User/Admin - View likes
+As a **Site User or Admin** I can **view the number of likes on each post** so that **I can see how popular or trending a post is**.
 
-A blue button should appear to click: _Make Public_,
+- Site User/Admin - View comments
+As a **Site User or Admin** I can **view the comments on an individual post** so that **I can read the conversation**.
 
-Another blue button should appear to click: _Open Browser_.
+- Site User - Comment on a post
+As a Site User I can comment on a post so that I can be involved in the conversation.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+- Site User - Google Static Map
+As a **Site user** I can **view an image of a map for an individual trail** so that **I can see where the trail is located**.
 
-To log into the Heroku toolbelt CLI:
+- Site User - Message Handling
+As a **Site user** I can **get a message when logging in or out** so that **I can get clear visual feedback**.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+**Epic: Admin capabilities**
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+**User Stories**: 
+- Admin - Post management
+As a **Site Owner** I can **create, read, update and delete posts** so that **I can manage my blog content**.
 
-------
+- Admin - Create drafts
+As a **Site owner** I can **create draft posts** so that **I can finish writing the content later**.
 
-## Release History
+- Admin - Approve comments
+As a **Site owner** I can **approve or disapprove comments** so that **I can filter out objectionable comments**.
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- Admin - Adding posts
+As a **Admin** I can **add posts through the dashboard** so that **I can add posts without having to access the admin panel**.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- Admin - Deleting posts
+As a **Site Admin** I can **delete my blog post when viewing them individually** so that **I can delete posts without accessing the admin panel**.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+- Admin - Editing posts
+As a **Site Admin** I can **Edit a blog post** so that **I can manage my blog content without accessing the Admin Panel**.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+**Epic: Account Management**
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+**User Stories**: 
+- Site User - Account registration
+As a Site **user** I can **register an account** so that **I can like and comment posts**.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- Site User - Log in
+As a **user** I can **log in to an already existing account** so that **I can post comments and like posts**.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+- Site User - Logout
+As a **Site user/admin** I can **log out of my account** so that **I am no longer logged in**.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+**Epic: Site Navigation**
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- Site User - About us Page
+As a **Site user** I can **Read about the website in the "about us" section** so that **I can get information about the website**.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+- Site User - Difficulty levels
+As a **Site user** I can **view a page explaining how difficulty levels are calculated** so that **I can understand the different difficulty levels**.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+- Site User - Google Static Map
+As a **Site user** I can **view an image of a map for an individual trail** so that **I can see where the trail is located**.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+User stories are being tracked using GitHub Projects. All User Stories have been divided into Acceptance Criteria and Tasks. 
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Wireframes
+When designing the layout of the website I created Wireframes for the landing page, the blog post page, and the about page.
+![Screenshot_20230124_064438](https://user-images.githubusercontent.com/114813115/216374043-3b2a89fd-d16a-4fe1-a4b6-2ab8263bb8e2.png)
+![Screenshot_20230124_070553](https://user-images.githubusercontent.com/114813115/216374093-c632812a-37d8-46be-ba68-317159c719f1.png)
+![Screenshot_20230124_070630](https://user-images.githubusercontent.com/114813115/216374135-f9f82142-d50e-4e1d-b4ec-35f02aa5a2cd.png)
+![Screenshot_20230124_071014](https://user-images.githubusercontent.com/114813115/216374164-4b049bc7-8814-471f-8125-f4bc583a6a74.png)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Entity Relationship Diagram
+I created an Entity Relationship Diagram (ERD) showing the relationship between the Post model, Comment model and the Default Django User Model. In the diagram the Fields latitude and longitude is missing. This is because I added these fields later in the project and could not change the diagram since my free trial with the drawing platform had ended. 
+Both the latitude and longitude has a FloatField and should be included in the Post model.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+![ERD PP4](https://user-images.githubusercontent.com/114813115/216373254-05b4a2c4-4920-4e08-9a77-b2998f89a9f3.png)
 
-------
+## Features
 
-## FAQ about the uptime script
+## Existing Features
 
-**Why have you added this script?**
+### Navigation bar
+  - The navigation bar features a Logo in the middle, that acts as a link to the home page. The navigation bar has a consistent placement on each page making the website easy to navigate. The navigation bar is responsive, logo size, text and icons adapts to different screen sizes.
+The left dropdown menu features links to the Home, About us, and Difficulty Scale pages. The right icon representing a user has links to the Home, Register and Login pages if the user is not logged in. If the user is logged in however, the dropdown menu will include links to the Home and Logout pages.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+![Screenshot_20230202_124957](https://user-images.githubusercontent.com/114813115/216375112-2ab21afc-a0f2-485d-ae0f-fbb0dbfc9e54.png)
+![Screenshot_20230202_125015](https://user-images.githubusercontent.com/114813115/216375148-b003dce7-5f6c-4af1-82fd-6a8505708882.png)
+![Screenshot_20230202_124934](https://user-images.githubusercontent.com/114813115/216375215-38d89104-a1f6-437a-bbff-1a7b76c50b98.png)
 
-**How will this affect me?**
+## The Landing Page
+  - The landing page consists of the different hiking trails that the admin has posted, sorted by the most recent posts first. Each hiking trail on the landing page has an image, Title, name of the author, an excerpt for the post and also the difficulty level of the trail. 
+The date and time that the post was created, as well as the number of likes on each post is also visible to the user. If a user has admin capabilities they will also see a button labeled “Add post”, which gives admin the possibility to add posts without having to access the admin panel.
+![Screenshot_20230202_010106](https://user-images.githubusercontent.com/114813115/216375613-a9529c11-b5c2-4349-9007-8a77cc9bccdc.png)
+![Screenshot_20230202_010047](https://user-images.githubusercontent.com/114813115/216375632-8ee30d60-8e0b-47b6-9e3d-56584d4abab9.png)
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+## The Blog Post Page
+- The individual blog posts include individual images, titles, content and map, but they are all built using the same form. When viewing an individual blog post as a user who is not logged in, all content, the map rendered as an image, number of likes and the comments on the post will be rendered. 
+When viewing an individual blog post as a user who is logged in, the possibility to like a blog post will be available, as will the possibility to leave a comment. 
+When viewing an individual blog post as a superuser/admin, two extra buttons will appear underneath the title of the blog post. These are links to the Edit post and Delete post pages, providing the Admin with full CRUD functionality without accessing the admin panel. 
+The map is rendered by taking the latitude and longitude provided in the add_post form and using them to provide coordinates to Google Maps Static API. This will create an image with a marker on the coordinates provided. 
+I used Bootstrap to hide the post image and the image of the map along with its header on medium and small devices to provide better responsiveness. 
+![Screenshot_20230202_050257](https://user-images.githubusercontent.com/114813115/216376657-c0d23238-c0af-426f-ae73-9409c8d72268.png)
+![Screenshot_20230202_011212](https://user-images.githubusercontent.com/114813115/216376239-7a8caedf-5c33-49c6-9de7-7c8e8f9305a1.png)
+![Screenshot_20230202_011304](https://user-images.githubusercontent.com/114813115/216376270-87df8793-9f4a-40e1-b412-5299c8667994.png)
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+## The Register Page
+  - The Register page allows the user to sign up for an account. It also provides a link redirecting them to the login page if they already have an account.
+  
+![Screenshot_20230202_011636](https://user-images.githubusercontent.com/114813115/216378265-24558034-5fb4-4ad1-a8ed-67eda122b3a1.png)
+  
+## The Login Page
+  - The login page allows users to sign in to their accounts. There is also a link redirecting them to the Register page if they do not have an account already. The user also has the possibility to select a 'Remember Me' option, so that the user’s login data will be stored in order to auto-fill the fields next time they return to the page.
+  
+![Screenshot_20230202_012426](https://user-images.githubusercontent.com/114813115/216378308-0a59e1ff-3a34-45eb-80ae-6c5ae55549bc.png)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## The Logout Page
+  - The log out page allows users to sign out of their account, it confirms that the user wants to sign out, and also provides a button labeled “Back” that redirects users to the previous page without signing out of their account. 
 
-**So….?**
+![Screenshot_20230202_014821](https://user-images.githubusercontent.com/114813115/216378443-cacc7d0d-6207-44b2-a384-bfee47fe71a7.png)
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+## The About us Page
+  - This page provides users with information about the website, reasons why the website exists and goals with the website can be found here. The page also includes links to the Login page and Register page, reminding users to sign up in order to be able to interact with the content.
 
-**Can I opt out?**
+![Screenshot_20230202_051204](https://user-images.githubusercontent.com/114813115/216379052-90cd96b3-b447-4bce-affa-0ff98f4bad98.png)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+## The Difficulty Scale Page
+  - The Difficulty Scale page explains how the website defines the different difficulty levels used to determine the difficulty of an individual trail. The page also includes links to the Login page and Register page, reminding users to sign up in order to be able to interact with the content.
+  
+![Screenshot_20230202_051303](https://user-images.githubusercontent.com/114813115/216379296-2dbae28b-f5c7-4d40-ab1f-f668191992d3.png)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+## The Add Post Form
+  - This form provides admin with the possibility to add a post from the website itself, the Add Post form includes all fields defined in the Post model. The form includes a button labeled “Submit” to add a new blog post, as well as a button labeled “Back” that will redirect the admin to the Home page without creating a post.
 
-**Anything more?**
+![Screenshot_20230202_051452](https://user-images.githubusercontent.com/114813115/216379990-936a35da-eb5c-42b6-84b6-b00d03dbdb44.png)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+## The Delete Post Form
+  - This form allows admins to delete a post from the website, given that they are the author of the blog post. By clicking the “Delete” button from the post_detail card, they are brought to the Delete page, where they can confirm that they want to delete the post by clicking “Delete”, they also have the option to click a button labeled “Back”, if they wish to keep the post.
 
----
+![Screenshot_20230202_015118](https://user-images.githubusercontent.com/114813115/216378660-d59c9b94-20ad-4b58-b3f9-68b552c9340c.png)
+  
+  
+## The Edit Post Form
+  - This form is similar to the Add Post form, it allows admin to edit a post that is already created, since there can be many admins on the website, an admin also needs to be the author of the post in order to be able to edit it on the website. The form will open pre-loaded with the content from when it was created, allowing admins to easily change misspellings or any other content. The title or the author of the post can’t be changed.
+  
+![Screenshot_20230202_015136](https://user-images.githubusercontent.com/114813115/216378782-a0b47232-e566-4384-9e59-00dcd777b11a.png)
+  
+## Validation Messages
+  - A validation message is shown to the user whenever they Sign in/out or register an account. They are also shown to admins whenever they successfully add a new hiking trail, delete a current one, or edit an existing one.
 
-Happy coding!
+![Screenshot_20230202_015306](https://user-images.githubusercontent.com/114813115/216380229-dd5bc035-6457-4065-90e9-9708ec715ec9.png)
+
+## Testing
+
+I have written automatic tests for views, models and forms. They all pass.
+![Screenshot_20230202_051758](https://user-images.githubusercontent.com/114813115/216381745-049099b1-99f5-4372-9821-38e2008a89cd.png)
+
+
+### Manual testing:
+- I have tested that this website works appropriately in the following browsers: Chrome, Firefox and Safari.
+- I confirmed that this website looks good and functions the way it should on all standard screen sizes using the devtools device toolbar.
+- I have confirmed that all headers and sections are legible in terms of positioning and readability.
+- No elements are distracted by background-colors, and no images are stretched when viewed on different devices.
+- I have made sure that all functions work properly and the website works as intended.
+- I have made sure that all buttons work as intended.
+- I have made sure that the register an account, login and logout features work as intended.
+- I have made sure that the website is responsive to all devices, using bootstrap and CSS to make website adapt to different screen sizes.
+
+### Manual testing - General Users
+
+![Screenshot_20230202_054027](https://user-images.githubusercontent.com/114813115/216386497-bb35c305-b51b-49ca-a712-ade78d2e290f.png)
+![Screenshot_20230202_054102](https://user-images.githubusercontent.com/114813115/216386595-aae3b81e-d44d-48e5-b2a2-a7ce1273ff0e.png)
+
+### Manual testing - Logged in Users
+
+![Screenshot_20230202_054234](https://user-images.githubusercontent.com/114813115/216387027-9dd64447-7c83-4828-b0fb-e02333a1ac69.png)
+
+### Manual testing - Superusers
+
+![Screenshot_20230202_054410](https://user-images.githubusercontent.com/114813115/216387393-ac030d54-bc33-40ea-ae06-3fb919db6bb2.png)
+
+### Manual testing - Admin Panel
+
+![Screenshot_20230202_054438](https://user-images.githubusercontent.com/114813115/216387548-c372eccf-1ff6-4475-9b78-04ee970cb42b.png)
+
+- Lighthouse Testing 
+I tested the landing page using DevTools Lighthouse test, this is the report i received.
+
+![Screenshot_20230202_064300](https://user-images.githubusercontent.com/114813115/216401195-8e278109-d1b1-439e-bef0-7dc05818d27c.png)
+
+- HTML Validator 
+
+- I validated the HTML of the landing page through the View Source functionality, since the code is using non HTML elements that won't be visible when at the source-view. I received errors because my img elements did not have any alt attribute, after adding that I received no errors. 
+
+![Screenshot_20230202_063748](https://user-images.githubusercontent.com/114813115/216400195-9735a155-4c64-4a73-bb73-a22399b061a6.png)
+
+- CSS Validator 
+
+- The CSS was validated using [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator), and all code passed without any issues.
+
+![Screenshot_20230202_064423](https://user-images.githubusercontent.com/114813115/216402171-5400c578-d407-4b11-8a04-a6582bc85278.png)
+
+- Validator Testing - Python
+
+Admin.py
+
+![admin py python linter](https://user-images.githubusercontent.com/114813115/216402971-6e2e47d3-c480-4cab-b8ed-1fc49d8e3770.png)
+
+Apps.py
+
+![Screenshot_20230202_065229](https://user-images.githubusercontent.com/114813115/216403238-b38915f1-d92d-49f0-b619-6a9b091e18f1.png)
+
+Forms.py
+
+![Screenshot_20230202_065329](https://user-images.githubusercontent.com/114813115/216403429-d4a3657f-f741-4b1e-8403-45bbae78bfb1.png)
+
+Models.py
+
+![Screenshot_20230202_065440](https://user-images.githubusercontent.com/114813115/216403686-679e9c4e-577a-4011-8285-3244b31ca2fa.png)
+
+test_forms.py
+
+![Screenshot_20230202_065549](https://user-images.githubusercontent.com/114813115/216403979-64466b05-0577-4382-bb0f-2ed1af2aba91.png)
+
+test_models.py
+
+![Screenshot_20230202_065640](https://user-images.githubusercontent.com/114813115/216404151-c708eda9-ffd7-4318-aec9-b5e74c92f96e.png)
+
+test_views.py 
+
+![Screenshot_20230202_065746](https://user-images.githubusercontent.com/114813115/216404385-10e2f095-9c53-4bbf-b7b5-09788d762b46.png)
+
+urls.py (blog)
+
+![Screenshot_20230202_065830](https://user-images.githubusercontent.com/114813115/216404555-0725059f-8d5e-47ff-bace-dc4b2d1b0778.png)
+
+views.py 
+
+![image](https://user-images.githubusercontent.com/114813115/216415298-77f6e64e-e71a-4831-a474-70964d593938.png)
+
+asgi.py
+
+![Screenshot_20230202_071538](https://user-images.githubusercontent.com/114813115/216411041-a98fa828-2f4d-47e5-b4f6-741709b84dda.png)
+
+Settings.py
+
+![Screenshot_20230202_072703](https://user-images.githubusercontent.com/114813115/216415607-b1cbc880-4352-4a23-a265-e83407ec71dc.png)
+
+urls.py (hikingspots)
+
+![Screenshot_20230202_072045](https://user-images.githubusercontent.com/114813115/216413200-f6a994dd-a413-4123-a01e-6ee8c88fe79d.png)
+
+wsgi.py
+
+![Screenshot_20230202_072155](https://user-images.githubusercontent.com/114813115/216413522-614bf2bb-5b70-4f47-bd48-cbc0e13e11fc.png)
+
+## Bugs
+- There are no unfixed bugs.
+
+## Deployment
+
+### Local Deployment
+
+To preview the project in the development environment, run the following command in the terminal:
+```python3 manage.py runterminal```. This will open port 8000. Click *Open Browser* when the popup window appears.
+To make a local copy of this repository, you can clone the project by typing the follow into your IDE terminal:
+- `git clone https://github.com/KarlPreisler/hiking-spots-blog.git`
+
+### Preparing File for Deployment
+If you have not already set up Postgres for use in the deployed application, complete the following steps:
+- In the terminal, type `pip3 install psycopg2-binary` and press enter.
+- Install gunicorn, which will act as the web server. Type `pip3 install gunicorn` in the terminal and press enter.
+- You can install this project's requirements (where applicable) using: `pip3 install -r requirements.txt`. If you have your own packages that have been installed, which I did, then the requirements file needs to be updated using: `pip3 freeze --local > requirements.txt`:
+  - In the terminal, type `pip3 freeze --local > requirements.txt`. This will create or update a file called `requirements.txt`, with a list of all the packages that Heroku will need to install to run our app.
+- Create a Procfile in the root folder of your project, and add the following to the Procfile: `web: gunicorn <app_name>.wsgi:application`.
+
+### ElephantSQL Deployment
+I have used ElephantSQL to host my database. 
+The instructions to create a new account can be[found here](https://code-institute-students.github.io/deployment-docs/02-elephantsql/elephantsql-01-sign-up), provided by Code Institute. 
+Once you have created an account:
+- Log in to ElephantSQL to access your dashboard.
+- Click *Create New Instance*.
+- Give your plan a name (usually the name of the project, in this case hiking-spots-blog*).
+- Select the Tiny Turtle (Free) plan.
+- Leave the Tags field blank.
+- Click *Select Region* and choose a data center near you.
+- Click *Review*, then, if everything looks correct, *Create Instance*.
+- Go back to your dashboard and click on the name of the project. 
+- Copy the database URL for your project, and use it in two places:
+  - In your `env.py` file, create a new key called `DATABASE_URL` and give it the value of the ElephantSQL database URL, as follows: ` os.environ.setdefault("DATABASE_URL", "my_copied_database_url")`.
+    - Before deploying the project, create a file called `env.py` (if it hasn't been created already), and complete the following steps:
+      - In `settings.py`: At the top of the file, add the following import:
+      ```python
+      import os
+      if os.path.isfile("env.py"):
+          import env
+      ```
+      - Replace the pasted-in database url with the following code:
+      ```python
+      os.environ.get("DATABASE_URL")
+      ```
+  - Paste the database URL into the config vars section of your project on Heroku - instructions are in the *Heroku Deployment* section below. 
+
+### Heroku deployment
+This project uses [Heroku](https://www.heroku.com), a cloud based platform that enables developers to build and run applications.
+
+I used the [Code Institute Gitpod Full Template](https://github.com/Code-Institute-Org/gitpod-full-template) for this project. Here is the [Heroku documentation](https://devcenter.heroku.com/articles/heroku-cli) for the most up-to-date installation instructions. 
+
+To log in to the Heroku CLI:
+
+- In the terminal, type ```heroku login -i``` and press enter.. 
+- Enter your username and password in the terminal.
+- If you have Multi-Factor Authentication turned on:
+  - Click on Account Settings (via the avatar menu) on the Heroku Dashboard.
+  - Scroll down to the API Key section and click Reveal. Copy the key.
+  - Use the login command: heroku login -i
+  - Enter your Heroku username.
+  - Enter the API key you just copied when asked to provide your password.
+
+To deploy the project from the Heroku dashboard:
+
+- Select *New* in the top-right corner of your Heroku Dashboard, and select *Create new app* from the dropdown menu.
+- Enter a name for your app. The app name must be unique.
+- From the dropdown menu, select the region closest to you (EU or USA), and select *Create App*.
+- From the new app *Settings*, click *Reveal Config Vars*, and set the value of KEY to `PORT`, and the value to `8000` then select *add*.
+- Add another Config Var with the KEY set to `DATABASE_URL` and the value to the ElephantSQL database URL you copied above.
+- Additional Config Vars:
+  - `CLOUDINARY_URL` copied from my [Cloudinary](https://cloudinary.com/), used to store images.
+  - `SECRET_KEY` containing the secret key (also included in `env.py`).
+  - `HEROKU_POSTGRESQL_COBALT_URL` with the Heroku postgres database URL. 
+
+To connect your GitHub repository to the newly created app in Heroku:
+
+- At the top of the screen on Heroku, select *Deploy*.
+- Next to *Deployment method* select *GitHub*, then scroll down and click *Connect to GitHub* to confirm you want to connect.
+- In the *repo-name* field, search for the name of the GitHub repository to deploy, and click *Search*.
+- Click *Connect* to link the GitHub repository with Heroku. 
+- Scroll down to the *Manual deploy* section, and click *Deploy Branch*.
+- Enable Automatic Deploys is also an option to have Heroku rebuild your app every time you push a new change to GitHub.
+
+Once the project is deployed, you will need to add the project's URL to your `ALLOWED_HOSTS` in `settings.py`, using the following code:
+- `ALLOWED_HOSTS = ['<project_url>']`
+In my case this looks like this:
+- `ALLOWED_HOSTS = ['hiking-spots.herokuapp.com']`
+
+Push this update to GitHub, and the live project will be deployed on Heroku.
+
+## Credits
+
+## Content
+
+## Acknowledgements
+
+
+
+
+
+
+
