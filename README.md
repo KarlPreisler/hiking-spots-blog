@@ -11,11 +11,12 @@ The website is fully responsive, providing users with the possibility of accessi
 
 * [User Experience](#user-experience-(UX))
 * [Entity Relationship Diagram](#entity-relationship-diagram)
-* [Wireframes] (#wireframes)
+* [Wireframes](#wireframes)
 * [Features](#Features)
 * [Testing](#Testing)
 * [Deployment](#Deployment)
 * [Credits](#Credit)
+
 Link to deployed project:
 
 ## User Experience (UX)
