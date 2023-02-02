@@ -12,7 +12,8 @@ from .models import Post
 from .forms import CommentForm, AddPostForm, EditPostForm
 
 
-GOOGLE_STATIC_MAPS_BASE_LINK = 'https://maps.googleapis.com/maps/api/staticmap?&size=800x200&zoom=13&key=AIzaSyA6pWdtMai6-A-8Egk4lHAOV22Ee1VRr8U'
+GOOGLE_STATIC_MAPS_BASE_LINK = \
+    'https://maps.googleapis.com/maps/api/staticmap?&size=800x200&zoom=13&key=AIzaSyA6pWdtMai6-A-8Egk4lHAOV22Ee1VRr8U'  # noqa
 
 
 class SuperUserRequiredMixin(object):
@@ -48,7 +49,8 @@ class PostDetail(View):
         liked = False
         map_marker_coordinates = f'{post.latitude},{post.longitude}'
 
-        map_img_src = f'{GOOGLE_STATIC_MAPS_BASE_LINK}&maptype=hybrid&center={map_marker_coordinates}&markers=color:green%7C{map_marker_coordinates}'
+        map_img_src = \
+            f'{GOOGLE_STATIC_MAPS_BASE_LINK}&maptype=hybrid&center={map_marker_coordinates}&markers=color:green%7C{map_marker_coordinates}'  # noqa
 
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True

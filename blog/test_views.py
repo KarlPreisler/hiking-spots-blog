@@ -40,13 +40,6 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response, 'base.html')
         self.assertTemplateUsed(response, 'post_detail.html')
 
-    # def test_get_add_post_view(self):
-    #    self.client.login(username='testdummy', password='test1234')
-    #    response = self.client.get(reverse('add_post'))
-    #    self.assertEqual(response.status_code, 200)
-    #    self.assertTemplateUsed(response, 'add_post.html')
-    #    self.assertTemplateUsed(response, 'base.html')
-
     def test_get_about_view(self):
         response = self.client.get(reverse('about'))
         self.assertEqual(response.status_code, 200)

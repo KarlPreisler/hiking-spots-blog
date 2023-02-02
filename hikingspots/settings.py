@@ -53,7 +53,8 @@ LOGGING = {
 }
 
 GOOGLE_API_KEY = os.environ.get("API_KEY")
-GOOGLE_STATIC_MAPS_BASE_LINK = 'https://maps.googleapis.com/maps/api/staticmap?&key=AIzaSyA6pWdtMai6-A-8Egk4lHAOV22Ee1VRr8U'
+GOOGLE_STATIC_MAPS_BASE_LINK = \
+    'https://maps.googleapis.com/maps/api/staticmap?&key=AIzaSyA6pWdtMai6-A-8Egk4lHAOV22Ee1VRr8U'  # noqa
 
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
@@ -146,16 +147,20 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',  # noqa
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
 
@@ -177,7 +182,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_STORAGE = 'cloudinary_storage.storage'\
+                        '.StaticHashedCloudinaryStorage'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
