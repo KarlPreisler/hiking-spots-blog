@@ -33,25 +33,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # DEBUG = 'DEV' in os.environ
 DEBUG = False
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': 'debug.log',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    },
-}
-
 GOOGLE_API_KEY = os.environ.get("API_KEY")
 GOOGLE_STATIC_MAPS_BASE_LINK = \
     'https://maps.googleapis.com/maps/api/staticmap?&key=AIzaSyA6pWdtMai6-A-8Egk4lHAOV22Ee1VRr8U'  # noqa
@@ -184,7 +165,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage'\
                         '.StaticHashedCloudinaryStorage'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
