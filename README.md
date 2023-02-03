@@ -400,7 +400,7 @@ Push changes to GitHub and project will now be live on Heroku.
 - [SmartDraw](https://cloud.smartdraw.com/) was used to create the Entity Relationship Diagram.
 - [Nps Shenandoah Scale](https://www.nps.gov/shen/planyourvisit/how-to-determine-hiking-difficulty.htm) was used to define difficulty levels.
 - [Stackoverflow detect admin](https://stackoverflow.com/questions/11916297/django-detect-admin-login-in-view-or-template) was used to understand how to detect admin login in view or template.
-- [Stackoverflow Custom Image as Logo Article](https://stackoverflow.com/questions/59683093/how-to-add-custom-image-as-logo-with-bootstrap-class-navbar-brand-in-django) was used 
+- [Stackoverflow Custom Image as Logo Article](https://stackoverflow.com/questions/59683093/how-to-add-custom-image-as-logo-with-bootstrap-class-navbar-brand-in-django) was used to add custom image as logo.
 - [Stackoverflow Dropdown Article](https://stackoverflow.com/questions/31130706/dropdown-in-django-model) was used to create the difficulty choices fields in the models.py file.
 - [Real python Handle POST Request Article](https://realpython.com/django-social-post-3/) was used to understand how to build and handle POST Requests in Django.
 - [Skyscanner](https://www.skyscanner.se/nyheter/sveriges-8-vackraste-vandringsleder) was used to find the most beautiful hiking spots in Sweden to use as inspiration for content on the website.
