@@ -12,12 +12,14 @@ The website is fully responsive, providing users with the possibility of accessi
 ## Index - Table of Contents
 
 * [User Experience](#user-experience-(UX))
-* [Entity Relationship Diagram](#entity-relationship-diagram)
 * [Wireframes](#wireframes)
+* [Entity Relationship Diagram](#entity-relationship-diagram)
 * [Features](#Features)
 * [Testing](#Testing)
 * [Deployment](#Deployment)
-* [Credits](#Credit)
+* [Content](#Content)
+* [Media](#Media)
+* [Acknowledgements](#Acknowledgements)
 
 Link to deployed project: https://hiking-spots.herokuapp.com/ 
 
@@ -108,8 +110,6 @@ Both the latitude and longitude has a FloatField and should be included in the P
 
 ## Features
 
-## Existing Features
-
 ### Navigation bar
   - The navigation bar features a Logo in the middle, that acts as a link to the home page. The navigation bar has a consistent placement on each page making the website easy to navigate. The navigation bar is responsive, logo size, text and icons adapts to different screen sizes.
 The left dropdown menu features links to the Home, About us, and Difficulty Scale pages. The right icon representing a user has links to the Home, Register and Login pages if the user is not logged in. If the user is logged in however, the dropdown menu will include links to the Home and Logout pages.
@@ -118,13 +118,13 @@ The left dropdown menu features links to the Home, About us, and Difficulty Scal
 ![Screenshot_20230202_125015](https://user-images.githubusercontent.com/114813115/216375148-b003dce7-5f6c-4af1-82fd-6a8505708882.png)
 ![Screenshot_20230202_124934](https://user-images.githubusercontent.com/114813115/216375215-38d89104-a1f6-437a-bbff-1a7b76c50b98.png)
 
-## The Landing Page
+### The Landing Page
   - The landing page consists of the different hiking trails that the admin has posted, sorted by the most recent posts first. Each hiking trail on the landing page has an image, Title, name of the author, an excerpt for the post and also the difficulty level of the trail. 
 The date and time that the post was created, as well as the number of likes on each post is also visible to the user. If a user has admin capabilities they will also see a button labeled “Add post”, which gives admin the possibility to add posts without having to access the admin panel.
 ![Screenshot_20230202_010106](https://user-images.githubusercontent.com/114813115/216375613-a9529c11-b5c2-4349-9007-8a77cc9bccdc.png)
 ![Screenshot_20230202_010047](https://user-images.githubusercontent.com/114813115/216375632-8ee30d60-8e0b-47b6-9e3d-56584d4abab9.png)
 
-## The Blog Post Page
+### The Blog Post Page
 - The individual blog posts include individual images, titles, content and map, but they are all built using the same form. When viewing an individual blog post as a user who is not logged in, all content, the map rendered as an image, number of likes and the comments on the post will be rendered. 
 When viewing an individual blog post as a user who is logged in, the possibility to like a blog post will be available, as will the possibility to leave a comment. 
 When viewing an individual blog post as a superuser/admin, two extra buttons will appear underneath the title of the blog post. These are links to the Edit post and Delete post pages, providing the Admin with full CRUD functionality without accessing the admin panel. 
@@ -134,48 +134,48 @@ I used Bootstrap to hide the post image and the image of the map along with its 
 ![Screenshot_20230202_011212](https://user-images.githubusercontent.com/114813115/216376239-7a8caedf-5c33-49c6-9de7-7c8e8f9305a1.png)
 ![Screenshot_20230202_011304](https://user-images.githubusercontent.com/114813115/216376270-87df8793-9f4a-40e1-b412-5299c8667994.png)
 
-## The Register Page
+### The Register Page
   - The Register page allows the user to sign up for an account. It also provides a link redirecting them to the login page if they already have an account.
   
 ![Screenshot_20230202_011636](https://user-images.githubusercontent.com/114813115/216378265-24558034-5fb4-4ad1-a8ed-67eda122b3a1.png)
   
-## The Login Page
+### The Login Page
   - The login page allows users to sign in to their accounts. There is also a link redirecting them to the Register page if they do not have an account already. The user also has the possibility to select a 'Remember Me' option, so that the user’s login data will be stored in order to auto-fill the fields next time they return to the page.
   
 ![Screenshot_20230202_012426](https://user-images.githubusercontent.com/114813115/216378308-0a59e1ff-3a34-45eb-80ae-6c5ae55549bc.png)
 
-## The Logout Page
+### The Logout Page
   - The log out page allows users to sign out of their account, it confirms that the user wants to sign out, and also provides a button labeled “Back” that redirects users to the previous page without signing out of their account. 
 
 ![Screenshot_20230202_014821](https://user-images.githubusercontent.com/114813115/216378443-cacc7d0d-6207-44b2-a384-bfee47fe71a7.png)
 
-## The About us Page
+### The About us Page
   - This page provides users with information about the website, reasons why the website exists and goals with the website can be found here. The page also includes links to the Login page and Register page, reminding users to sign up in order to be able to interact with the content.
 
 ![Screenshot_20230202_051204](https://user-images.githubusercontent.com/114813115/216379052-90cd96b3-b447-4bce-affa-0ff98f4bad98.png)
 
-## The Difficulty Scale Page
+### The Difficulty Scale Page
   - The Difficulty Scale page explains how the website defines the different difficulty levels used to determine the difficulty of an individual trail. The page also includes links to the Login page and Register page, reminding users to sign up in order to be able to interact with the content.
   
 ![Screenshot_20230202_051303](https://user-images.githubusercontent.com/114813115/216379296-2dbae28b-f5c7-4d40-ab1f-f668191992d3.png)
 
-## The Add Post Form
+### The Add Post Form
   - This form provides admin with the possibility to add a post from the website itself, the Add Post form includes all fields defined in the Post model. The form includes a button labeled “Submit” to add a new blog post, as well as a button labeled “Back” that will redirect the admin to the Home page without creating a post.
 
 ![Screenshot_20230202_051452](https://user-images.githubusercontent.com/114813115/216379990-936a35da-eb5c-42b6-84b6-b00d03dbdb44.png)
 
-## The Delete Post Form
+### The Delete Post Form
   - This form allows admins to delete a post from the website, given that they are the author of the blog post. By clicking the “Delete” button from the post_detail card, they are brought to the Delete page, where they can confirm that they want to delete the post by clicking “Delete”, they also have the option to click a button labeled “Back”, if they wish to keep the post.
 
 ![Screenshot_20230202_015118](https://user-images.githubusercontent.com/114813115/216378660-d59c9b94-20ad-4b58-b3f9-68b552c9340c.png)
   
   
-## The Edit Post Form
+### The Edit Post Form
   - This form is similar to the Add Post form, it allows admin to edit a post that is already created, since there can be many admins on the website, an admin also needs to be the author of the post in order to be able to edit it on the website. The form will open pre-loaded with the content from when it was created, allowing admins to easily change misspellings or any other content. The title or the author of the post can’t be changed.
   
 ![Screenshot_20230202_015136](https://user-images.githubusercontent.com/114813115/216378782-a0b47232-e566-4384-9e59-00dcd777b11a.png)
   
-## Validation Messages
+### Validation Messages
   - A validation message is shown to the user whenever they Sign in/out or register an account. They are also shown to admins whenever they successfully add a new hiking trail, delete a current one, or edit an existing one.
 
 ![Screenshot_20230202_015306](https://user-images.githubusercontent.com/114813115/216380229-dd5bc035-6457-4065-90e9-9708ec715ec9.png)
@@ -213,24 +213,24 @@ I have written automatic tests for views, models and forms. They all pass.
 
 ![Screenshot_20230202_054438](https://user-images.githubusercontent.com/114813115/216387548-c372eccf-1ff6-4475-9b78-04ee970cb42b.png)
 
-- Lighthouse Testing 
+### Lighthouse Testing 
 I tested the landing page using DevTools Lighthouse test, this is the report i received.
 
 ![Screenshot_20230202_064300](https://user-images.githubusercontent.com/114813115/216401195-8e278109-d1b1-439e-bef0-7dc05818d27c.png)
 
-- HTML Validator 
+### HTML Validator 
 
 - I validated the HTML of the landing page through the View Source functionality, since the code is using non HTML elements that won't be visible when at the source-view. I received errors because my img elements did not have any alt attribute, after adding that I received no errors. 
 
 ![Screenshot_20230202_063748](https://user-images.githubusercontent.com/114813115/216400195-9735a155-4c64-4a73-bb73-a22399b061a6.png)
 
-- CSS Validator 
+### CSS Validator 
 
 - The CSS was validated using [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator), and all code passed without any issues.
 
 ![Screenshot_20230202_064423](https://user-images.githubusercontent.com/114813115/216402171-5400c578-d407-4b11-8a04-a6582bc85278.png)
 
-- Validator Testing - Python
+### Validator Testing - Python
 
 Admin.py
 
@@ -293,7 +293,7 @@ wsgi.py
 
 To preview the project in the development environment, run the following command in the terminal:
 ```python3 manage.py runterminal```. This will open port 8000. Click *Open Browser* when the popup window appears.
-To make a local copy of this repository, you can clone the project by typing the follow into your IDE terminal:
+To make a local copy of this repository, clone the project by typing the follow into the IDE terminal:
 - `git clone https://github.com/KarlPreisler/hiking-spots-blog.git`
 
 ### Preparing File for Deployment
@@ -301,40 +301,40 @@ If you have not already set up Postgres for use in the deployed application, com
 - In the terminal, type `pip3 install psycopg2-binary` and press enter.
 - Install gunicorn, which will act as the web server. Type `pip3 install gunicorn` in the terminal and press enter.
 - You can install this project's requirements (where applicable) using: `pip3 install -r requirements.txt`. If you have your own packages that have been installed, which I did, then the requirements file needs to be updated using: `pip3 freeze --local > requirements.txt`:
-  - In the terminal, type `pip3 freeze --local > requirements.txt`. This will create or update a file called `requirements.txt`, with a list of all the packages that Heroku will need to install to run our app.
+  - In the terminal, type `pip3 freeze --local > requirements.txt`. This will create or update a file called requirements.txt, that includes all the packages that Heroku needs to install in order to run our app.
 - Create a Procfile in the root folder of your project, and add this code to the Procfile: `web: gunicorn <app_name>.wsgi:application`.
 
 ### ElephantSQL Deployment
 I have used ElephantSQL to host my database. 
 The instructions to create a new account can be[found here](https://code-institute-students.github.io/deployment-docs/02-elephantsql/elephantsql-01-sign-up). 
 Once you have created an account:
-- Log in to ElephantSQL to access your dashboard.
-- Click *Create New Instance*.
-- Give your plan a name (usually the name of the project, in this case hiking-spots-blog*).
+- Log in to ElephantSQL.
+- Click Create New Instance.
+- Give your plan a name (usually the name of the project, in this case hiking-spots-blog).
 - Select the Tiny Turtle (Free) plan.
 - Leave the Tags field blank.
-- Click *Select Region* and choose a data center near you.
-- Click *Review*, then, if everything looks correct, *Create Instance*.
+- Click Select Region and choose a data center near you.
+- Click Review and create an instance if everything looks correct.
 - Go back to your dashboard and click on the name of the project. 
-- Copy the database URL for your project, and use it in two places:
-  - In your `env.py` file, create a new key called `DATABASE_URL` and give it the value of the ElephantSQL database URL, as follows: ` os.environ.setdefault("DATABASE_URL", "my_copied_database_url")`.
-    - Before deploying the project, create a file called `env.py` (if it hasn't been created already), and complete the following steps:
-      - In `settings.py`: At the top of the file, add the following import:
+- Copy the database URL for your project.
+- In your env.py file, create a new key called DATABASE_URL and give it the value of the ElephantSQL database URL, as follows: os.environ.setdefault("DATABASE_URL", "my_copied_database_url").
+- Before deploying the project, if you dont already have one, create a file called env.py.
+      - In settings.py: At the top of the file, add the following import:
       ```python
       import os
       if os.path.isfile("env.py"):
           import env
       ```
-      - Replace the pasted-in database url with the following code:
+- Replace the pasted-in database url with the following code:
       ```python
       os.environ.get("DATABASE_URL")
       ```
-  - Paste the database URL into the config vars section of your project on Heroku - instructions are in the *Heroku Deployment* section below. 
+- Add the database URL that was copied earlier and add it to the Config Vars in the Heroku settings as the instructions show below.
 
 ### Heroku deployment
-This project uses [Heroku](https://www.heroku.com), a cloud based platform that enables developers to build and run applications.
+This project is run using [Heroku](https://www.heroku.com), a cloud based platform that enables developers to build and run applications.
 
-I used the [Code Institute Gitpod Full Template](https://github.com/Code-Institute-Org/gitpod-full-template) for this project. Here is the [Heroku documentation](https://devcenter.heroku.com/articles/heroku-cli) for the most up-to-date installation instructions. 
+I used the [Code Institute Gitpod Full Template](https://github.com/Code-Institute-Org/gitpod-full-template) for this project. Here is the [Heroku documentation](https://devcenter.heroku.com/articles/heroku-cli) for the most recent installation instructions. 
 
 To log in to the Heroku CLI:
 
@@ -372,17 +372,38 @@ Once the project is deployed, add the URL of the website to the ALLOWED_HOSTS in
 
 Push changes to GitHub and project will now be live on Heroku.
 
-## Credits
-
 ## Content
+- The setup and base functionality of this project was inspired by Code Institute's 'I Think Therefore I Blog' section.
 - [Code Institute's Gitpod Full Template](https://github.com/Code-Institute-Org/gitpod-full-template) was used as the starting workspace template for this project.
 - [Code Institute's README Template](https://github.com/Code-Institute-Solutions/readme-template) was used to structure this README.
+- [Looka](https://looka.com/) was used to create a custom logo.
+- [Uizard](https://uizard.io/) was used to create Wireframes of the website layout.
+- [SmartDraw](https://cloud.smartdraw.com/) was used to create the Entity Relationship Diagram.
+- [Nps Shenandoah Scale](https://www.nps.gov/shen/planyourvisit/how-to-determine-hiking-difficulty.htm) was used to define difficulty levels.
+- [Stackoverflow detect admin](https://stackoverflow.com/questions/11916297/django-detect-admin-login-in-view-or-template) was used to understand how to detect admin login in view or template.
+- [Stackoverflow Custom Image as Logo Article](https://stackoverflow.com/questions/59683093/how-to-add-custom-image-as-logo-with-bootstrap-class-navbar-brand-in-django) was used 
+- [Stackoverflow Dropdown Article](https://stackoverflow.com/questions/31130706/dropdown-in-django-model) was used to create the difficulty choices fields in the models.py file.
+- [Real python Handle POST Request Article](https://realpython.com/django-social-post-3/) was used to understand how to build and handle POST Requests in Django.
+- [Skyscanner](https://www.skyscanner.se/nyheter/sveriges-8-vackraste-vandringsleder) was used to find the most beautiful hiking spots in Sweden to use as inspiration for content on the website.
+- [Outdoorexperten](https://www.outdoorexperten.se/t-vandringstips-i-sverige.aspx) was also used as inspiration for blog content.
+- [Getbootstrap](https://getbootstrap.com/docs/5.0/components/alerts/) was used to add alert messages.
+- [Django Documentation](https://docs.djangoproject.com/en/3.2/ref/contrib/messages/#using-messages-in-views-and-templates) was used to add messages in views and template.
+- [Django Documentation Mixins](https://docs.djangoproject.com/en/3.2/topics/auth/default/#the-loginrequired-mixin) was used to create the LoginRequiredMixin.
+- [Django Class-Based View Mixins](https://gist.github.com/robgolding/3092600) Code for creating a custom SuperUserRequiredMixin.
+- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) was used to understand error messages.
+- [Google Maps Static API](https://developers.google.com/maps/documentation/maps-static/overview) was used to create the image of the map for every blog post.
+- Code to set up Google API and create a map based on the latitude and longtitude provided when adding a post was created with the help of my mentor Brian Machiara, as well as error fixing with the Student Support team at Code Institute. 
+
+## Media
+- [Fontawesome](https://fontawesome.com/icons/user?s=regular&f=classic) was used to get the user icon for the right dropdown menu. 
+- [Techsini](https://techsini.com/multi-mockup/index.php) was used to get the image showing the websites responsiveness for different devices.
+- [This image](https://skanesport.se/2021/05/24/vandra-i-sverige/) is used as the default image when adding a post without an image.
+- [This image](https://www.svenskaturistforeningen.se/aktiviteter/jamtlandstriangeln-pa-egen-hand-sommar/) was used in the post "Jämtlandstriangeln" and is a real image of of the hiking trail.
+- [This image](https://www.idrefjall.se/semester-i-fjallen/sommar-pa-idre-fjall/vandring-i-fjallen/) was used in the post "Bruksvallarna" and is a real image of of the hiking trail.
+- [This image](https://www.svd.se/a/70brkK/5-vidunderliga-vandringsleder) was used in the post "Kynneslingan" and is a real image of of the hiking trail.
+- [This image](https://www.svenskakyrkan.se/carl-johans-pastorat/masthugg/nyheter/pilgrimsvandra-pa-dag-hammarskjoldsleden) was used in the post "Kustenleden" and is a real image of of the hiking trail.
+- [This image](https://www.svenskaturistforeningen.se/aktiviteter/vandring/nyborjare/) was used in the post "Österlenleden" and is a real image of of the hiking trail.
+- [This image](https://sv.wikipedia.org/wiki/Kungsleden) was used in the post "Kungsleden" and is a real image of of the hiking trail.
 
 ## Acknowledgements
-- Special thanks to my mentor Brian Machiara for helping me throughout the project. With everything from styling and responsiveness, to understanding the logical aspects such as building functions etc.  
-
-
-
-
-
-
+- Special thanks to my mentor Brian Machiara for guidance throughout the project. With everything from styling and layout, to the functionality and logic of the project.
