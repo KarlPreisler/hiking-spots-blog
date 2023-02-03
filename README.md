@@ -28,69 +28,81 @@ Link to deployed project: https://hiking-spots.herokuapp.com/
 **Epic: User Interactivity**
 
 **User Stories**: 
-- Site User - View post list
+- Site User - View post list.
 As a **Site user** I can **view a list of posts** so that **I can select one to read**.
 
-- Site User - Liking Posts
+- Site User - Liking Posts.
 As a **Site User** I can **like a post** so that **I can provide positive feedback to the author**.
 
-- Site User/Admin - View likes
+- Site User/Admin - View likes.
 As a **Site User or Admin** I can **view the number of likes on each post** so that **I can see how popular or trending a post is**.
 
-- Site User/Admin - View comments
+- Site User/Admin - View comments.
 As a **Site User or Admin** I can **view the comments on an individual post** so that **I can read the conversation**.
 
-- Site User - Comment on a post
+- Site User - Comment on a post.
 As a Site User I can comment on a post so that I can be involved in the conversation.
 
-- Site User - Google Static Map
+- Site User - Google Static Map.
 As a **Site user** I can **view an image of a map for an individual trail** so that **I can see where the trail is located**.
 
-- Site User - Message Handling
+- Site User - Message Handling.
 As a **Site user** I can **get a message when logging in or out** so that **I can get clear visual feedback**.
 
 **Epic: Admin capabilities**
 
 **User Stories**: 
-- Admin - Post management
+- Admin - Post management.
+
 As a **Site Owner** I can **create, read, update and delete posts** so that **I can manage my blog content**.
 
-- Admin - Create drafts
+- Admin - Create drafts.
+
 As a **Site owner** I can **create draft posts** so that **I can finish writing the content later**.
 
-- Admin - Approve comments
+- Admin - Approve comments.
+
 As a **Site owner** I can **approve or disapprove comments** so that **I can filter out objectionable comments**.
 
-- Admin - Adding posts
+- Admin - Adding posts.
+
 As a **Admin** I can **add posts through the dashboard** so that **I can add posts without having to access the admin panel**.
 
-- Admin - Deleting posts
+- Admin - Deleting posts.
+
 As a **Site Admin** I can **delete my blog post when viewing them individually** so that **I can delete posts without accessing the admin panel**.
 
-- Admin - Editing posts
+- Admin - Editing posts.
+
 As a **Site Admin** I can **Edit a blog post** so that **I can manage my blog content without accessing the Admin Panel**.
 
 **Epic: Account Management**
 
 **User Stories**: 
-- Site User - Account registration
+- Site User - Account registration.
+
 As a Site **user** I can **register an account** so that **I can like and comment posts**.
 
-- Site User - Log in
+- Site User - Log in.
+
 As a **user** I can **log in to an already existing account** so that **I can post comments and like posts**.
 
-- Site User - Logout
+- Site User - Logout.
+
 As a **Site user/admin** I can **log out of my account** so that **I am no longer logged in**.
 
 **Epic: Site Navigation**
 
-- Site User - About us Page
+- Site User - About us Page.
+
 As a **Site user** I can **Read about the website in the "about us" section** so that **I can get information about the website**.
 
-- Site User - Difficulty levels
+- Site User - Difficulty levels.
+
 As a **Site user** I can **view a page explaining how difficulty levels are calculated** so that **I can understand the different difficulty levels**.
 
-- Site User - Google Static Map
+- Site User - Google Static Map.
+
 As a **Site user** I can **view an image of a map for an individual trail** so that **I can see where the trail is located**.
 
 User stories are being tracked using GitHub Projects. All User Stories have been divided into Acceptance Criteria and Tasks. 
