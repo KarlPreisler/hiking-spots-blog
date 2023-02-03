@@ -393,6 +393,8 @@ Push changes to GitHub and project will now be live on Heroku.
 - [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status) was used to understand error messages.
 - [Google Maps Static API](https://developers.google.com/maps/documentation/maps-static/overview) was used to create the image of the map for every blog post.
 - Code to set up Google API and create a map based on the latitude and longtitude provided when adding a post was created with the help of my mentor Brian Machiara, as well as error fixing with the Student Support team at Code Institute. 
+[Setup Google Cloud API Key Tutorial](https://cbi-analytics.nl/python-django-google-maps-api-set-up-api-in-google-cloud-platform/) was used to correctly setup the API Key on the Google Cloud Platform.
+- [Django Google Maps Tutorial](https://cbi-analytics.nl/django-google-maps-tutorial-4-creating-a-google-map-maps-javascript-api/) was used to understand how to use the Google Maps API in Django.
 
 ## Media
 - [Fontawesome](https://fontawesome.com/icons/user?s=regular&f=classic) was used to get the user icon for the right dropdown menu. 
