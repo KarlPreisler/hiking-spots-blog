@@ -6,7 +6,9 @@ Information such as difficulty or distance of a trail is easily navigated to and
 The admin users of the site can add new hiking trails, delete current ones, or edit/update hiking trails that you are the author of.
 
 The website is fully responsive, providing users with the possibility of accessing the website on desktop, tablet or phone.
-- AMI RESPONSIVE IMAGE - 
+
+![Screenshot_20230203_033410](https://user-images.githubusercontent.com/114813115/216629918-c7499734-a0ea-41d9-b85a-f2bf34ab0d98.png)
+
 ## Index - Table of Contents
 
 * [User Experience](#user-experience-(UX))
@@ -17,7 +19,7 @@ The website is fully responsive, providing users with the possibility of accessi
 * [Deployment](#Deployment)
 * [Credits](#Credit)
 
-Link to deployed project:
+Link to deployed project: https://hiking-spots.herokuapp.com/ 
 
 ## User Experience (UX)
 
@@ -300,11 +302,11 @@ If you have not already set up Postgres for use in the deployed application, com
 - Install gunicorn, which will act as the web server. Type `pip3 install gunicorn` in the terminal and press enter.
 - You can install this project's requirements (where applicable) using: `pip3 install -r requirements.txt`. If you have your own packages that have been installed, which I did, then the requirements file needs to be updated using: `pip3 freeze --local > requirements.txt`:
   - In the terminal, type `pip3 freeze --local > requirements.txt`. This will create or update a file called `requirements.txt`, with a list of all the packages that Heroku will need to install to run our app.
-- Create a Procfile in the root folder of your project, and add the following to the Procfile: `web: gunicorn <app_name>.wsgi:application`.
+- Create a Procfile in the root folder of your project, and add this code to the Procfile: `web: gunicorn <app_name>.wsgi:application`.
 
 ### ElephantSQL Deployment
 I have used ElephantSQL to host my database. 
-The instructions to create a new account can be[found here](https://code-institute-students.github.io/deployment-docs/02-elephantsql/elephantsql-01-sign-up), provided by Code Institute. 
+The instructions to create a new account can be[found here](https://code-institute-students.github.io/deployment-docs/02-elephantsql/elephantsql-01-sign-up). 
 Once you have created an account:
 - Log in to ElephantSQL to access your dashboard.
 - Click *Create New Instance*.
@@ -336,49 +338,48 @@ I used the [Code Institute Gitpod Full Template](https://github.com/Code-Institu
 
 To log in to the Heroku CLI:
 
-- In the terminal, type ```heroku login -i``` and press enter.. 
+- In the terminal, type heroku login -i. 
 - Enter your username and password in the terminal.
 - If you have Multi-Factor Authentication turned on:
-  - Click on Account Settings (via the avatar menu) on the Heroku Dashboard.
-  - Scroll down to the API Key section and click Reveal. Copy the key.
+  - Click on Account Settings on the Heroku Dashboard.
+  - Copy the key by scrolling down to the API Key section and click Reveal. 
   - Use the login command: heroku login -i
   - Enter your Heroku username.
-  - Enter the API key you just copied when asked to provide your password.
+  - Enter the API key.
 
 To deploy the project from the Heroku dashboard:
 
-- Select *New* in the top-right corner of your Heroku Dashboard, and select *Create new app* from the dropdown menu.
+- Select New in the top-right corner of your Heroku Dashboard, and select Create new app from the dropdown menu.
 - Enter a name for your app. The app name must be unique.
-- From the dropdown menu, select the region closest to you (EU or USA), and select *Create App*.
-- From the new app *Settings*, click *Reveal Config Vars*, and set the value of KEY to `PORT`, and the value to `8000` then select *add*.
-- Add another Config Var with the KEY set to `DATABASE_URL` and the value to the ElephantSQL database URL you copied above.
+- From the dropdown menu, select the region closest to you, and select Create App.
+- From the Settings, click Reveal Config Vars. Add a new config var and add the KEY to 'PORT', and the value to '8000'.
+- Add another Config Var with the KEY set to 'DATABASE_URL' and the value to the ElephantSQL database URL you copied above.
 - Additional Config Vars:
-  - `CLOUDINARY_URL` copied from my [Cloudinary](https://cloudinary.com/), used to store images.
-  - `SECRET_KEY` containing the secret key (also included in `env.py`).
-  - `HEROKU_POSTGRESQL_COBALT_URL` with the Heroku postgres database URL. 
+  - 'CLOUDINARY_URL' copied from [Cloudinary](https://cloudinary.com/), used to store images.
+  - 'SECRET_KEY' containing the secret key.
+  - 'HEROKU_POSTGRESQL_COBALT_URL' with the Heroku postgres database URL. 
 
 To connect your GitHub repository to the newly created app in Heroku:
 
-- At the top of the screen on Heroku, select *Deploy*.
-- Next to *Deployment method* select *GitHub*, then scroll down and click *Connect to GitHub* to confirm you want to connect.
-- In the *repo-name* field, search for the name of the GitHub repository to deploy, and click *Search*.
-- Click *Connect* to link the GitHub repository with Heroku. 
-- Scroll down to the *Manual deploy* section, and click *Deploy Branch*.
-- Enable Automatic Deploys is also an option to have Heroku rebuild your app every time you push a new change to GitHub.
+- At the top of the screen on Heroku, select Deploy.
+- Next to Deployment method select GitHub, then scroll down and click Connect to GitHub to confirm you want to connect.
+- In the repo-name field, search for the name of the GitHub repository to deploy.
+- Click Connect to connect the GitHub repository with Heroku. 
+- Deploy Branch in the Manual deploy section, or enable automatic deploys.
 
-Once the project is deployed, you will need to add the project's URL to your `ALLOWED_HOSTS` in `settings.py`, using the following code:
-- `ALLOWED_HOSTS = ['<project_url>']`
-In my case this looks like this:
-- `ALLOWED_HOSTS = ['hiking-spots.herokuapp.com']`
+Once the project is deployed, add the URL of the website to the ALLOWED_HOSTS in settings.py, using the following code:
+- ALLOWED_HOSTS = ['<project_url>']
 
-Push this update to GitHub, and the live project will be deployed on Heroku.
+Push changes to GitHub and project will now be live on Heroku.
 
 ## Credits
 
 ## Content
+- [Code Institute's Gitpod Full Template](https://github.com/Code-Institute-Org/gitpod-full-template) was used as the starting workspace template for this project.
+- [Code Institute's README Template](https://github.com/Code-Institute-Solutions/readme-template) was used to structure this README.
 
 ## Acknowledgements
-
+- Special thanks to my mentor Brian Machiara for helping me throughout the project. With everything from styling and responsiveness, to understanding the logical aspects such as building functions etc.  
 
 
 
