@@ -29,24 +29,31 @@ Link to deployed project: https://hiking-spots.herokuapp.com/
 
 **User Stories**: 
 - Site User - View post list.
+ 
 As a **Site user** I can **view a list of posts** so that **I can select one to read**.
 
 - Site User - Liking Posts.
+ 
 As a **Site User** I can **like a post** so that **I can provide positive feedback to the author**.
 
 - Site User/Admin - View likes.
+ 
 As a **Site User or Admin** I can **view the number of likes on each post** so that **I can see how popular or trending a post is**.
 
 - Site User/Admin - View comments.
+
 As a **Site User or Admin** I can **view the comments on an individual post** so that **I can read the conversation**.
 
 - Site User - Comment on a post.
+
 As a Site User I can comment on a post so that I can be involved in the conversation.
 
 - Site User - Google Static Map.
+
 As a **Site user** I can **view an image of a map for an individual trail** so that **I can see where the trail is located**.
 
 - Site User - Message Handling.
+ 
 As a **Site user** I can **get a message when logging in or out** so that **I can get clear visual feedback**.
 
 **Epic: Admin capabilities**
