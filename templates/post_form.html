@@ -4,12 +4,14 @@
 
 {% load crispy_forms_tags %}
 
+<!-- Sub-header -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-12">
             <h2 class="margin-top center-text">Edit A Post</h2>
         </div>
     </div>
+    <!-- Shows edit post form if user is author of the post -->
     {% if post.author == request.user %}
     <div class="row justify-content-center">
         <div class="col-md-auto p-3 bg-dark bg-opacity-75 text-start border-end border-bottom border-3 border-light">
@@ -22,6 +24,7 @@
             </form>
         </div>
     </div>
+    <!-- Show log in or sign up option if user is not author of the post -->
     {% else %}
     <div class="row">
         <div class="col justify-content-center text-center">

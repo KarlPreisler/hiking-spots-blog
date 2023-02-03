@@ -3,6 +3,9 @@ from .forms import CommentForm, AddPostForm, EditPostForm
 
 
 class TestCommentForm(TestCase):
+    """
+    Unit testing for add comment form
+    """
     def test_message_field_is_required(self):
         form = CommentForm({'body': ''})
         self.assertFalse(form.is_valid())
@@ -15,7 +18,9 @@ class TestCommentForm(TestCase):
 
 
 class TestAddPostForm(TestCase):
-
+    """
+    Unit testing for add post form
+    """
     def test_title_is_required(self):
         form = AddPostForm({'title': ''})
         self.assertFalse(form.is_valid())
@@ -47,7 +52,9 @@ class TestAddPostForm(TestCase):
 
 
 class TestEditPostForm(TestCase):
-
+    """
+    Unit testing for edit post form
+    """
     def test_title_is_required(self):
         form = EditPostForm({'title': ''})
         self.assertFalse(form.is_valid())

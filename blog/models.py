@@ -15,6 +15,9 @@ DIFFICULTY_CHOICES = (
 
 
 class Post(models.Model):
+    """
+    Model for all posts
+    """
     title = models.CharField(max_length=200, unique=True, default='Title')
     slug = models.SlugField(max_length=200, unique=True, default='slug')
     author = models.ForeignKey(
@@ -34,6 +37,9 @@ class Post(models.Model):
     likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
 
     class Meta:
+        """
+        Sorts posts to show newest post first
+        """
         ordering = ['-created_on']
 
     def __str__(self):
@@ -47,6 +53,9 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
+    """
+    Model for comment field underneath posts
+    """
     post = models.ForeignKey(
         Post, on_delete=models.CASCADE, related_name='comments')
     name = models.CharField(max_length=80)
@@ -56,7 +65,10 @@ class Comment(models.Model):
     approved = models.BooleanField(default=False)
 
     class Meta:
-        ordering = ['created_on']
+        """
+        Sorts comments to show newest comment first
+        """
+        ordering = ['-created_on']
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"

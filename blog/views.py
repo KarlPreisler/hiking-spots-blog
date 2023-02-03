@@ -35,6 +35,9 @@ class SuperUserRequiredMixin(object):
 
 
 class PostList(generic.ListView):
+    """
+    View for the home/landing page
+    """
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
@@ -42,7 +45,9 @@ class PostList(generic.ListView):
 
 
 class PostDetail(View):
-
+    """
+    View for individual blog posts
+    """
     def get(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug, status=1)
         comments = post.comments.filter(approved=True).order_by("-created_on")
@@ -90,7 +95,9 @@ class PostDetail(View):
 
 
 class PostLike(LoginRequiredMixin, View):
-
+    """
+    View allowing users to like a post
+    """
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
 
@@ -137,6 +144,9 @@ class AddPost(SuperUserRequiredMixin, View):
 
 
 class EditPost(SuperUserRequiredMixin, UpdateView):
+    """
+    Edit post view, displays & handles the form to edit a post
+    """
     model = Post
     template_name = 'post_form.html'
     form_class = EditPostForm
@@ -144,6 +154,9 @@ class EditPost(SuperUserRequiredMixin, UpdateView):
 
 
 class DeletePost(SuperUserRequiredMixin, DeleteView):
+    """
+    View for the delete post page, displays & handles the page for deleting a post
+    """
     model = Post
     success_url = reverse_lazy('home')
     template_name = 'delete_post.html'
@@ -156,6 +169,9 @@ class DeletePost(SuperUserRequiredMixin, DeleteView):
 
 
 class About(CreateView):
+    """
+    View to display and handle the About us page
+    """
     template_name = 'about.html'
 
     def get(self, request, *args, **kwargs):
@@ -163,6 +179,9 @@ class About(CreateView):
 
 
 class Difficulty(CreateView):
+    """
+    View to display and handle the Difficulty page
+    """
     template_name = 'difficulty.html'
 
     def get(self, request, *args, **kwargs):

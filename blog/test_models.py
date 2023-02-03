@@ -6,7 +6,9 @@ User = get_user_model()
 
 
 class TestViews(TestCase):
-
+    """
+    Unit testing for post model
+    """
     @classmethod
     def setUpTestData(self):
         self.user = User.objects.create(username='testdummy')

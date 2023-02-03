@@ -7,7 +7,9 @@ User = get_user_model()
 
 
 class TestViews(TestCase):
-
+"""
+Unit testing for all views
+"""
     @classmethod
     def setUpTestData(self):
         """ Create test data """
